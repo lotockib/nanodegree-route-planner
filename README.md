@@ -1,6 +1,6 @@
 # Project
 
-This directory is a manual copy of [CppND-Route-Planning-Project](https://github.com/udacity/CppND-Route-Planning-Project) to allow for editing and project submission.
+This is a fork of [CppND-Route-Planning-Project](https://github.com/udacity/CppND-Route-Planning-Project) to allow for editing and project submission.
 
 # Setup
 
