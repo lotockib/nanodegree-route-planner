@@ -63,7 +63,7 @@ void RoutePlanner::AddNeighbors(RouteModel::Node *current_node) {
 /**
  * Compare nodes using g + h value.
 */
-bool Compare(RouteModel::Node * node0, RouteModel::Node * node1) {
+bool RoutePlanner::Compare(RouteModel::Node * node0, RouteModel::Node * node1) {
     // Return true if node0 is closer, false otherwise
     return node0->g_value + node0->h_value > node1->g_value + node1->h_value;
 }
