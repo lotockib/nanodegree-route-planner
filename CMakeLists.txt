@@ -40,6 +40,14 @@ target_link_libraries(test
     pugixml
 )
 
+# Add more tests
+add_executable(test_brad test/simple_test.cpp src/route_planner.cpp src/model.cpp src/route_model.cpp)
+
+target_link_libraries(test_brad 
+    gtest_main 
+    pugixml
+)
+
 # Set options for Linux or Microsoft Visual C++
 if( ${CMAKE_SYSTEM_NAME} MATCHES "Linux" )
     target_link_libraries(OSM_A_star_search PUBLIC pthread)
