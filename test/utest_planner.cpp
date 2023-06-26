@@ -5,24 +5,7 @@
 #include "gtest/gtest.h"
 #include "../src/route_model.h"
 #include "../src/route_planner.h"
-
-// copied from main.cpp
-static std::optional<std::vector<std::byte>> ReadFile(const std::string &path)
-{
-    std::ifstream is{path, std::ios::binary | std::ios::ate};
-    if ( !is )
-        return std::nullopt;
-
-    auto size = is.tellg();
-    std::vector<std::byte> contents(size);
-
-    is.seekg(0);
-    is.read((char*)contents.data(), size);
-
-    if ( contents.empty() )
-        return std::nullopt;
-    return std::move(contents);
-}
+#include "../src/file_ops.h"
 
 TEST(PlannerTests, ConstTest) {
     EXPECT_EQ(1, 1) << "1 does not equal 1";
@@ -39,6 +22,19 @@ TEST(PlannerTests, TestConstructor) {
     RoutePlanner planner{model, 10.0, 10.0, 90.0, 90.0};
 
     EXPECT_EQ(planner.GetDistance(), 0.0);
-    // EXPECT_EQ(planner.
 
 }
+
+// TODO figure out const char ** usage here
+// TEST(PlannerTests, ParsePath) {
+//     const char *argp = "nullpath";
+//     const char **argpp = &argp;
+//     std::string path = ParseFilePath(0, argpp);
+// }
+
+// TODO cant figure out how to get expected osm data in here
+// TEST(PlannerTests, ReadFile) {
+//     std::string path = "../map.osm";
+//     std::vector<std::byte> osm_data;
+//     EXPECT_EQ(ReadOsmDataFile(path), osm_data);
+// }

@@ -41,7 +41,7 @@ target_link_libraries(test
 )
 
 # Planner tests for learning purposes
-add_executable(test_planner test/utest_planner.cpp src/route_planner.cpp src/model.cpp src/route_model.cpp)
+add_executable(test_planner test/utest_planner.cpp src/route_planner.cpp src/model.cpp src/route_model.cpp src/file_ops.cpp)
 target_link_libraries(test_planner gtest_main pugixml)
 
 # Simple test example for learning purposes
