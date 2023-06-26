@@ -19,10 +19,10 @@ int main(int argc, const char **argv)
 
     // Initialize and get user inputs
     float start_x, start_y, end_x, end_y;
-    start_x = get_user_coord("start_x");
-    start_y = get_user_coord("start_y");
-    end_x = get_user_coord("end_x");
-    end_y = get_user_coord("end_y");
+    start_x = GetUserCoord("start_x");
+    start_y = GetUserCoord("start_y");
+    end_x = GetUserCoord("end_x");
+    end_y = GetUserCoord("end_y");
 
     // Build Model.
     RouteModel model{osm_data};

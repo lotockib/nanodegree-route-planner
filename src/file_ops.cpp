@@ -55,7 +55,7 @@ std::string ParseFilePath(int argc, const char **argv) {
     return osm_data_file;
 }
 
-float get_user_coord(std::string coord_name) {
+float GetUserCoord(std::string coord_name) {
     float input;
     while (true) {
         std::cout << "Enter " << coord_name << ": ";
