@@ -6,7 +6,7 @@
 int Squared(int n) {
 // Returns the factorial of n
     return pow(n, 2);
-}; 
+};
 
 // Tests factorial of 0.
 TEST(SquaredTest, HandlesZeroInput) {

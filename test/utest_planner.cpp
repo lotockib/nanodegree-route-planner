@@ -1,3 +1,5 @@
+// Some tests for learning purposes
+
 #include <vector>
 #include <fstream>
 #include "gtest/gtest.h"
@@ -22,13 +24,13 @@ static std::optional<std::vector<std::byte>> ReadFile(const std::string &path)
     return std::move(contents);
 }
 
-TEST(SimpleTests, ConstTest) {
+TEST(PlannerTests, ConstTest) {
     EXPECT_EQ(1, 1) << "1 does not equal 1";
     EXPECT_EQ(1, 1) << "1 does not equal 1";
     EXPECT_EQ(1, 1) << "1 does not equal 1";
 }
 
-TEST(SimpleTests, TestConstructor) {
+TEST(PlannerTests, TestConstructor) {
     std::vector<std::byte> osm_data;
     std::string osm_data_file = "../map.osm";
     auto data = ReadFile(osm_data_file);

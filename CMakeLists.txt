@@ -40,17 +40,13 @@ target_link_libraries(test
     pugixml
 )
 
-# Add more tests
-add_executable(test_brad test/simple_test.cpp src/route_planner.cpp src/model.cpp src/route_model.cpp)
+# Planner tests for learning purposes
+add_executable(test_planner test/utest_planner.cpp src/route_planner.cpp src/model.cpp src/route_model.cpp)
+target_link_libraries(test_planner gtest_main pugixml)
 
-target_link_libraries(test_brad 
-    gtest_main 
-    pugixml
-)
-
-# Isolated simple test for learning google tests
-add_executable(simple_test test/utest_simple.cpp)
-target_link_libraries(simple_test gtest_main)
+# Simple test example for learning purposes
+add_executable(test_example test/utest_example.cpp)
+target_link_libraries(test_example gtest_main)
 
 # Set options for Linux or Microsoft Visual C++
 if( ${CMAKE_SYSTEM_NAME} MATCHES "Linux" )
