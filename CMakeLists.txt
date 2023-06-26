@@ -48,6 +48,10 @@ target_link_libraries(test_brad
     pugixml
 )
 
+# Isolated simple test for learning google tests
+add_executable(simple_test test/utest_simple.cpp)
+target_link_libraries(simple_test gtest_main)
+
 # Set options for Linux or Microsoft Visual C++
 if( ${CMAKE_SYSTEM_NAME} MATCHES "Linux" )
     target_link_libraries(OSM_A_star_search PUBLIC pthread)
