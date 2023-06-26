@@ -25,7 +25,7 @@ add_subdirectory(thirdparty/pugixml)
 add_subdirectory(thirdparty/googletest)
 
 # Add project executable
-add_executable(OSM_A_star_search src/main.cpp src/model.cpp src/render.cpp src/route_model.cpp src/route_planner.cpp)
+add_executable(OSM_A_star_search src/main.cpp src/model.cpp src/render.cpp src/route_model.cpp src/route_planner.cpp src/file_ops.cpp)
 
 target_link_libraries(OSM_A_star_search
     PRIVATE io2d::io2d
@@ -39,6 +39,14 @@ target_link_libraries(test
     gtest_main 
     pugixml
 )
+
+# Planner tests for learning purposes
+add_executable(test_planner test/utest_planner.cpp src/route_planner.cpp src/model.cpp src/route_model.cpp src/file_ops.cpp)
+target_link_libraries(test_planner gtest_main pugixml)
+
+# Simple test example for learning purposes
+add_executable(test_example test/utest_example.cpp)
+target_link_libraries(test_example gtest_main)
 
 # Set options for Linux or Microsoft Visual C++
 if( ${CMAKE_SYSTEM_NAME} MATCHES "Linux" )
